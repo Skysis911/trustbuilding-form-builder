@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import GlassCard from './ui/custom/GlassCard';
 import { Button } from './ui/button';
-import { toast } from 'sonner'; // Corrected import from sonner directly
+import { toast } from 'sonner';
 import { ArrowRight } from 'lucide-react';
 
 interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -42,12 +42,8 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
   };
   
   return (
-    <GlassCard 
-      className={cn('animate-fade-in', className)} 
-      style={{ animationDelay: '0.7s' }}
-      {...props}
-    >
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className={cn('space-y-6', className)} {...props}>
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Imię i nazwisko
@@ -58,7 +54,7 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
             type="text"
             placeholder="Jan Kowalski"
             required
-            className="input-field"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
             value={formState.name}
             onChange={handleChange}
           />
@@ -74,53 +70,54 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
             type="email"
             placeholder="twoja@firma.pl"
             required
-            className="input-field"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
             value={formState.email}
             onChange={handleChange}
           />
           <p className="mt-1 text-xs text-gray-500">Tylko do przesłania oferty i dalszego kontaktu. Zero spamu!</p>
         </div>
         
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Numer telefonu
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+48 123 456 789"
-            required
-            className="input-field"
-            value={formState.phone}
-            onChange={handleChange}
-          />
-          <p className="mt-1 text-xs text-gray-500">Zostaw numer, a oddzwonimy z konkretami – bez zbędnej gadki!</p>
-        </div>
-        
-        <div>
-          <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">
-            Strona internetowa [Opcjonalne]
-          </label>
-          <input
-            id="website"
-            name="website"
-            type="url"
-            placeholder="www.twojafirma.pl"
-            className="input-field"
-            value={formState.website}
-            onChange={handleChange}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+              Numer telefonu
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+48 123 456 789"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              value={formState.phone}
+              onChange={handleChange}
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">
+              Strona internetowa
+            </label>
+            <input
+              id="website"
+              name="website"
+              type="url"
+              placeholder="www.twojafirma.pl"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              value={formState.website}
+              onChange={handleChange}
+            />
+          </div>
         </div>
         
         <div>
           <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">
-            Wybierz swój przedział budżetu [Opcjonalne]
+            Wybierz swój przedział budżetu
           </label>
           <select
             id="budget"
             name="budget"
-            className="input-field"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
             value={formState.budget}
             onChange={handleChange}
           >
@@ -134,14 +131,14 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
         
         <div>
           <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-            Co chcesz osiągnąć? [Opcjonalne]
+            Co chcesz osiągnąć?
           </label>
           <textarea
             id="description"
             name="description"
-            rows={4}
+            rows={3}
             placeholder="Np. Pozyskanie większej liczby leadów z kampanii Facebook Ads"
-            className="input-field resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none"
             value={formState.description}
             onChange={handleChange}
           />
@@ -149,7 +146,7 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
         
         <Button 
           type="submit" 
-          className="w-full py-6 text-white button-gradient group animate-pulse-button"
+          className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg animate-pulse-button"
           disabled={isSubmitting}
         >
           <span className="relative z-10 flex items-center justify-center gap-2 font-semibold text-lg">
@@ -166,10 +163,10 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
         </Button>
         
         <p className="text-xs text-gray-500 text-center">
-          Klikając „Rozpocznij projekt TERAZ", wyrażasz zgodę na naszą <a href="#" className="text-black hover:underline">politykę prywatności</a> oraz <a href="#" className="text-black hover:underline">warunki współpracy</a>. Twoje dane są bezpieczne.
+          Klikając „Rozpocznij projekt TERAZ", wyrażasz zgodę na naszą <a href="#" className="text-blue-600 hover:underline">politykę prywatności</a> oraz <a href="#" className="text-blue-600 hover:underline">warunki współpracy</a>. Twoje dane są bezpieczne.
         </p>
       </form>
-    </GlassCard>
+    </div>
   );
 };
 

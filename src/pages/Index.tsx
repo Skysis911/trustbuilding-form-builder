@@ -21,20 +21,42 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50">
-      <main className="flex-1 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start min-h-[calc(100vh-10rem)]">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 min-h-[calc(100vh-8rem)]">
           {/* Left Column - Info */}
-          <div className="order-2 md:order-1 flex flex-col justify-center">
+          <div className="md:w-2/5 flex flex-col justify-center">
+            <div className="mb-6">
+              <img 
+                src="/lovable-uploads/e3d780f8-8ada-4f78-b54a-3087ea4e31c5.png" 
+                alt="WorkFlow Media" 
+                className="h-12 mb-8"
+              />
+            </div>
+            
             <HeroSection />
-            <SocialProof />
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-medium mb-4">Jak to działa?</h3>
+              <ol className="space-y-3 list-decimal pl-5">
+                <li>Wypełnij formularz kontaktowy.</li>
+                <li>Poczekaj na kontakt od nas (max. 24h).</li>
+                <li>Otrzymaj dopasowaną ofertę i rozpocznij współpracę.</li>
+              </ol>
+            </div>
+            
+            <ProfileSection className="mt-8" />
+            
+            <SocialProof className="mt-8" />
           </div>
           
           {/* Right Column - Form */}
-          <div className="order-1 md:order-2">
-            <ProfileSection />
-            <ContactForm className="mt-4" />
-            <UrgencyBanner />
+          <div className="md:w-3/5 md:pl-8 md:border-l md:border-gray-200">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h2 className="text-2xl font-bold mb-6">Rozpocznij projekt już teraz!</h2>
+              <ContactForm />
+              <UrgencyBanner className="mt-4" />
+            </div>
           </div>
         </div>
 
@@ -48,7 +70,7 @@ const Index = () => {
         </div>
       </main>
       
-      <footer className="border-t border-gray-200 py-4 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+      <footer className="border-t border-gray-200 py-4 px-4 text-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} WorkFlow Media. Wszelkie prawa zastrzeżone.</p>
       </footer>
     </div>

@@ -1,42 +1,31 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Quote } from 'lucide-react';
-import GlassCard from './ui/custom/GlassCard';
+import { Quote, Star } from 'lucide-react';
 
 interface SocialProofProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const SocialProof = ({ className, ...props }: SocialProofProps) => {
   return (
     <div 
-      className={cn('space-y-6 animate-fade-in', className)}
-      style={{ animationDelay: '0.9s' }}
+      className={cn('space-y-4', className)}
       {...props}
     >
-      <div className="p-4 bg-white/50 rounded-lg border border-gray-100 shadow-sm">
-        <p className="font-medium text-center">
-          Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media i wspólnie wygenerowaliśmy już 15 mln zł przychodu z kampanii online.
+      <div className="flex items-center mb-2">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="w-5 h-5 fill-orange-400 text-orange-400" />
+        ))}
+      </div>
+      
+      <blockquote className="relative text-gray-700 italic text-sm">
+        <Quote className="absolute top-0 left-0 w-6 h-6 text-gray-300 -translate-x-2 -translate-y-1" />
+        <p className="pl-4">
+          "Sprzedaż naszego e-sklepu wzrosła o 300% w ciągu 3 miesięcy dzięki kampaniom od WorkFlow Media! Polecam gorąco."
         </p>
-      </div>
-      
-      <div className="flex flex-wrap justify-center gap-8 py-4">
-        <div className="h-8 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Logo 1</div>
-        <div className="h-8 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Logo 2</div>
-        <div className="h-8 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Logo 3</div>
-        <div className="h-8 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Logo 4</div>
-      </div>
-      
-      <GlassCard variant="dark" className="relative">
-        <Quote className="absolute top-4 left-4 w-8 h-8 text-black/10" />
-        <blockquote className="pl-8 pt-2">
-          <p className="italic text-gray-700">
-            "Sprzedaż naszego e-sklepu wzrosła o 300% w ciągu 3 miesięcy dzięki kampaniom od WorkFlow Media! Polecam gorąco."
-          </p>
-          <footer className="mt-2 text-right font-medium">
-            – Jan Nowak, CEO
-          </footer>
-        </blockquote>
-      </GlassCard>
+        <footer className="mt-2 text-right text-sm font-medium not-italic">
+          – Jan Nowak, CEO
+        </footer>
+      </blockquote>
     </div>
   );
 };
