@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import GlassCard from './ui/custom/GlassCard';
 import { Button } from './ui/button';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner'; // Corrected import from sonner directly
 import { ArrowRight, Check } from 'lucide-react';
 
 interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {}
