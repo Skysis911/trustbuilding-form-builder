@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import GlassCard from './ui/custom/GlassCard';
 import { Button } from './ui/button';
 import { toast } from 'sonner'; // Corrected import from sonner directly
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -48,7 +47,7 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
       style={{ animationDelay: '0.7s' }}
       {...props}
     >
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Imię i nazwisko
@@ -150,7 +149,7 @@ const ContactForm = ({ className, ...props }: ContactFormProps) => {
         
         <Button 
           type="submit" 
-          className="w-full py-6 text-white button-gradient group"
+          className="w-full py-6 text-white button-gradient group animate-pulse-button"
           disabled={isSubmitting}
         >
           <span className="relative z-10 flex items-center justify-center gap-2 font-semibold text-lg">
