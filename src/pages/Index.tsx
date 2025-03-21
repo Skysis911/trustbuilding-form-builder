@@ -63,9 +63,8 @@ const Index = () => {
         {/* Credentials below - visible on initial load */}
         <div className="mt-8 pt-4 border-t border-gray-200">
           <div className="text-center">
-            <p className="text-lg font-semibold">Nasze osiągnięcia:</p>
-            <p className="mt-2">Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media</p>
-            <p>Wspólnie wygenerowaliśmy już 15 mln zł przychodu z kampanii online</p>
+            <p className="text-lg font-semibold">Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media</p>
+            <p className="mt-2">Wspólnie wygenerowaliśmy już 15 mln zł przychodu z kampanii online</p>
           </div>
         </div>
       </main>
