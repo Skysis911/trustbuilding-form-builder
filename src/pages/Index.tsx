@@ -23,9 +23,9 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 min-h-[calc(100vh-8rem)]">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left Column - Info */}
-          <div className="md:w-2/5 flex flex-col justify-center">
+          <div className="md:w-3/5 flex flex-col">
             <div className="mb-6">
               <img 
                 src="/lovable-uploads/e3d780f8-8ada-4f78-b54a-3087ea4e31c5.png" 
@@ -45,23 +45,25 @@ const Index = () => {
               </ol>
             </div>
             
-            <ProfileSection className="mt-8" />
+            <ProfileSection className="mt-10" />
             
             <SocialProof className="mt-8" />
           </div>
           
           {/* Right Column - Form */}
-          <div className="md:w-3/5 md:pl-8 md:border-l md:border-gray-200">
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold mb-6">Rozpocznij projekt już teraz!</h2>
-              <ContactForm />
-              <UrgencyBanner className="mt-4" />
+          <div className="md:w-2/5 md:border-l md:border-gray-200">
+            <div className="sticky top-8">
+              <div className="bg-white rounded-xl shadow-lg p-6 md:ml-8">
+                <h2 className="text-2xl font-bold mb-6">Rozpocznij projekt już teraz!</h2>
+                <ContactForm />
+                <UrgencyBanner className="mt-4" />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Credentials below - visible on initial load */}
-        <div className="mt-8 pt-4 border-t border-gray-200">
+        <div className="mt-12 pt-6 border-t border-gray-200">
           <div className="text-center">
             <p className="text-lg font-semibold">Nasze osiągnięcia:</p>
             <p className="mt-2">Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media</p>
