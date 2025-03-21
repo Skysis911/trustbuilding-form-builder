@@ -5,6 +5,7 @@ import ProfileSection from '@/components/ProfileSection';
 import ContactForm from '@/components/ContactForm';
 import UrgencyBanner from '@/components/UrgencyBanner';
 import SocialProof from '@/components/SocialProof';
+import CredentialBox from '@/components/CredentialBox';
 
 const Index = () => {
   // Add subtle page transition
@@ -60,11 +61,32 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Credentials below - visible on initial load */}
-        <div className="mt-8 pt-4 border-t border-gray-200">
-          <div className="text-center">
-            <p className="text-lg font-semibold">Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media</p>
-            <p className="mt-2">Wspólnie wygenerowaliśmy już 15 mln zł przychodu z kampanii online</p>
+        {/* Credentials section with boxes */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="text-center mb-12">
+            <p className="text-2xl font-semibold text-blue-800">Ponad 200 firm rozwinęło biznes dzięki WorkFlow Media</p>
+            <p className="mt-2 text-lg text-gray-600">Wspólnie wygenerowaliśmy już 15 mln zł przychodu z kampanii online</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <CredentialBox 
+              title="Zarządzałem milionowymi budżetami reklamowymi dla globalnych marek"
+              description="Pojawiłem się w publikacjach takich jak Harvard Business Review i MIT Sloan. Zarządzałem milionowymi wydatkami na reklamy i pomagałem firmom przejść z poziomu 0 do kilkunastu milionów złotych przychodów, korzystając z kanałów Digital Marketingowych: Facebook Ads, Google Ads, SEO, LinkedIn Ads & Automation, a także dokładnej analizy ruchu."
+              brands={["Volkswagen", "Sony", "Intel", "Dell", "Google", "HBO", "Sage", "Wirtualna Polska", "Play", "Orange"]}
+            />
+            
+            <CredentialBox 
+              title="Wnioski po wydaniu 180 milionów złotych na reklamy"
+              description="Po wydaniu 180 milionów złotych na kampanie online, opracowałem i wyciągnąłem kluczowe wnioski, które pozwalają mi tworzyć skuteczne strategie marketingowe. Praktyki te mogę teraz wdrożyć w Twojej firmie, by maksymalizować Twój ROI i skalować biznes."
+            />
+            
+            <CredentialBox 
+              title="Chcesz rozwinąć swój biznes? Zróbmy to razem!"
+              description="Skontaktuj się ze mną, aby omówić jak możemy wspólnie rozwinąć Twój biznes dzięki sprawdzonym strategiom marketingowym."
+              isContact={true}
+              email="m.strzalkowski@workflowmedia.pl"
+              phone="+48 725 129 862"
+            />
           </div>
         </div>
       </main>
